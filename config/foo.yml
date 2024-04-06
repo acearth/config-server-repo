@@ -1,0 +1,7 @@
+vars:
+  prop_one:
+    name: axq
+    code: CODE_001
+  p_two:
+    name: bbb
+    code: CODE_002
