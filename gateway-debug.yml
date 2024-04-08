@@ -3,3 +3,15 @@ logging:
     org.springframework.cloud.gateway: DEBUG
     org.springframework.web.reactive: DEBUG
     reactor.netty.http.client: DEBUG
+resilience4j.circuitbreaker:
+  instances:
+    consumerBackend:
+      registerHealthIndicator: true
+      slidingWindowSize: 5 
+      permittedNumberOfCallsInHalfOpenState: 2
+      slidingWindowType: COUNT_BASED
+      minimumNumberOfCalls: 2
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 10s
+      failureRateThreshold: 2
+      eventConsumerBufferSize: 2
